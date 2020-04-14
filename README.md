@@ -1,5 +1,5 @@
 # CUCM_Jabber2Line_Conversion
- sample code for converting jabber or other phone on CUCM from 1 line to 2 line.
+Sample code for converting jabber or any other phone on CUCM from single to dual line.
 
 ## Introduction:
 
