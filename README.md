@@ -4,7 +4,7 @@ Sample code for converting CUCM Phone from single line to dual line.
 
 ## Introduction:
 
-This sample Jave code demonstrates how CUCM AXL API can be used to covert the current single line phones on CUCM to dual line.
+This sample Java code demonstrates how CUCM AXL API can be used to covert the current single line phones on CUCM to dual line.
 This piece of code pushes the current on users phone to line2 and configures line1 with new provided contact center extension.
 *line = Extension (interchangeably used)
 
