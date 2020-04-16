@@ -1,6 +1,6 @@
 # CUCM_Jabber2Line_Conversion
 
-Sample code for converting CUCM Phone from Single line to Dual Line.
+Sample code for converting CUCM Phone from single line to dual line.
 
 ## Introduction:
 
