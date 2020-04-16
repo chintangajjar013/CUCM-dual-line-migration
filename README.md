@@ -19,6 +19,13 @@ OPTIONAL: Maven for build and dependency management.
 ## Limitation:
 The sample code only works with devices which has recording capability, but can be modified to work with other types of devices.
 
+## Preconfiguration
+1. Make sure 11.6 or later CUCM server is installed
+2. Make sure AXL service on CUCM host is enabled
+3. Add a user on CUCM as enduser and provide Administration access to the Callmanager AXL API.
+4. For testing make sure there is a phone configured with least basic configuration as below:
+![base phone](https://raw.githubusercontent.com/chintangajjar013/cucm_Jabber2Line/master/prerun.png)
+
 ## How to Use:
 while the purpose of this repo is to demonstrate the usability of AXL API, but if you wish to use the already compiled jar file which does the line switching operation below is procedure.
 
