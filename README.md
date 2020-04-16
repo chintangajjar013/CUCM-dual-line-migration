@@ -9,9 +9,10 @@ This piece of code pushes the current on users phone to line2 and configures lin
 *line = Extension (interchangeably used)
 
 ## Use Case:
-The prime use case for this program was to provide additional contact center(UCCE) extension on agents jabber phone apart from their non-ACD line. Contact Center Agents now can use this additional provided line to login to UCCE/Finesse and can enable them work from home seamlessly.
+The primary use case for this program is to provide additional contact center(UCCE) extension on agents Jabber/CIPC or other phone device in addition to their current non-ACD line. 
+Contact Center Agents now can use this additional provided line to login to UCCE/Finesse and can enable them work from home seamlessly (useful in COVID-19 kind of emergency situations).
 
-The Program pushes current line1 configured on agent phone to line2 and reconfigures line1 with the new number provided as .
+The program pushes current line1 configured on agent's phone to line2 and reconfigures the line1 with the new number provided in input.
 
 ## Requirements:
 
@@ -23,11 +24,11 @@ OPTIONAL: Maven for build and dependency management.
 
 The sample code only works with devices which has recording capability, but can be modified to work with other types of devices.
 
-## Pre-reun configuration
+## Pre-run configuration
 
 1. Make sure 11.6 or later CUCM server is installed
 2. Make sure AXL service on CUCM host is enabled
-3. Add a user on CUCM as enduser and provide Administration access to the Callmanager AXL API.
+3. Add a user on CUCM as enduser and provide Administration access to the CUCM AXL API.
 5. Make sure the phones you are trying to migrate are configured on CUCM with single line.
 4. For testing make sure there is a phone configured with least basic configuration as below:
 
@@ -50,7 +51,7 @@ while the purpose of this repo is to demonstrate the usability of AXL API, but i
 1. Install JRE 1.8 or Higher and configure Class Path.
 2. Create a folder, and copy the **Runner.jar**, **Input.csv**, **config.properties** and **run_me.bat** file.
 3. Modify config.properties to make sure you have correct AXL API user/password and CUCM host address set here. 
-4. The Code uses HTTPS connection to CUCM so if you are using self signed certs you will have to import those certs in to the JRE trust store, google for additional details on this.
+4. The Code uses HTTPS connection to CUCM so if you are using self-signed certs you will have to import those certs in to the JRE trust store, google for additional details on this.
 5. Modify **Input.csv** file
 The content of Input CSV should be as below
 
@@ -62,7 +63,7 @@ CurrentLine = Current Line which will be pushed to Line2 from Line1 (Mandatory p
 
 NewLine= New Line which will be configured on Line1 for the device (Mandatory param)
 
-Partition= CUCM Route Partition, we consider here that both Line1 and Line2 uses same partition. (Mandatory Param, provide NULL if not not applicable)
+Partition= CUCM Route Partition, we consider here that both Line1 and Line2 uses same partition. (Mandatory Param, provide NULL if not applicable)
 
 ExtMask=External Mask to be set on Line1 and Line2 (Mandatory Param, provide NULL if not not applicable)
 
