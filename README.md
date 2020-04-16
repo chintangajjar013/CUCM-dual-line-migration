@@ -9,8 +9,9 @@ This piece of code pushes the current on users phone to line2 and configures lin
 *line = Extension (interchangeably used)
 
 ## Use Case:
+The prime use case for this program was to provide additional contact center(UCCE) extension on agents jabber phone apart from their non-ACD line. Contact Center Agents now can use this additional provided line to login to UCCE/Finesse and can enable them work from home seamlessly.
 
-During an emergency situation line COVID-19, users can be provided additional Contact center line on their current softphone (Jabber or CIPC) which users can then use to login to contact center and take calls from the queue.
+The Program pushes current line1 configured on agent phone to line2 and reconfigures line1 with the new number provided as .
 
 ## Requirements:
 
