@@ -68,7 +68,7 @@ public class AXLUtility {
 		  }
 		else{	
 			lr.status = "ERROR";
-			log.addtolog("Inside getLineInfo(): Error while getting List for given extension:"+response.getStatus());				
+			log.addtolog("Inside getLineInfo(): Error while getting List for given extension:"+response.getStatus()+" ResponseBody:"+response.getBody());				
 		}					
 	} 
 		catch (Exception e) {
@@ -263,12 +263,16 @@ public class AXLUtility {
 	  	    	monitorCSS=sPhone[12];
 	  	    	user=sPhone[13];
 	  	    	
+				if(partition.equalsIgnoreCase("NULL")||partition==null) {
+						partition="";
+		    	}
+				
 	  	    	if(!extMask.matches("^[0-9*#+X]{0,24}$")){
 	  	    		templog.addtolog("Ext Mask formate is invalid, will be set to null");
 	  	      		extMask = "";
 	  	    	}
 	    	
-	  	    	templog.addtolog("Using Phone:"+phone+",using current Line:"+cLine1+",using new Line:"+nLine1+",using extMask:"+extMask+",user:"+user+",recordCurrentLine="+isCLineRecorded+",recordNewLine"+isNLineRecorded);	  		    
+	  	    	templog.addtolog("Using Phone:"+phone+",using Partition="+partition+",using current Line:"+cLine1+",using new Line:"+nLine1+",using extMask:"+extMask+",user:"+user+",recordCurrentLine="+isCLineRecorded+",recordNewLine"+isNLineRecorded);	  		    
 	  	    	templog.addtolog("Getting Line1 info");
 		    	LineReturn lrt1=this.getLineInfo(cLine1, partition, templog);
 		    	
@@ -296,6 +300,8 @@ public class AXLUtility {
 		    	lrt2.e164Mask=extMask;
 		    	lrt2.isRecorded=false;
 		    	lrt1.isRecorded=false;
+				
+				
 		    	
 		    	if(isCLineRecorded.equalsIgnoreCase("Y")) {
 		    		lrt1.isRecorded=true;
