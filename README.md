@@ -1,5 +1,6 @@
 # CUCM_Jabber2Line_Conversion
-Sample code for converting jabber or any other phone on CUCM from single to dual line.
+
+Sample code for converting CUCM Phone from Single line to Dual Line.
 
 ## Introduction:
 
@@ -12,21 +13,37 @@ This piece of code pushes the current on users phone to line2 and configures lin
 During an emergency situation line COVID-19, users can be provided additional Contact center line on their current softphone (Jabber or CIPC) which users can then use to login to contact center and take calls from the queue.
 
 ## Requirements:
+
 You will need Java JRE 1.8 or higher installed on your computer.
 OPTIONAL: You will need JDK 1.8 or higher installed (and latest version of eclipse) on your computer to explore the code base.
 OPTIONAL: Maven for build and dependency management.
 
 ## Limitation:
+
 The sample code only works with devices which has recording capability, but can be modified to work with other types of devices.
 
-## Preconfiguration
+## Pre-reun configuration
+
 1. Make sure 11.6 or later CUCM server is installed
 2. Make sure AXL service on CUCM host is enabled
 3. Add a user on CUCM as enduser and provide Administration access to the Callmanager AXL API.
+5. Make sure the phones you are trying to migrate are configured on CUCM with single line.
 4. For testing make sure there is a phone configured with least basic configuration as below:
+
 ![base phone](https://raw.githubusercontent.com/chintangajjar013/cucm_Jabber2Line/master/prerun.png)
 
+## Post-run phone configuration
+
+After running the bat file with below input sample phone looks like below:
+
+CHGAJJARGDPR,NULL,80940000,80940001,NULL,NULL,NULL,N,N,NULL,NULL,NULL,NULL,NULL
+
+![base phone](https://raw.githubusercontent.com/chintangajjar013/cucm_Jabber2Line/master/postrun.png)
+
+Line1 is pushed to Line2 and Line1 now is configured with new line.
+
 ## How to Use:
+
 while the purpose of this repo is to demonstrate the usability of AXL API, but if you wish to use the already compiled jar file which does the line switching operation below is procedure.
 
 1. Install JRE 1.8 or Higher and configure Class Path.
@@ -87,3 +104,7 @@ i.e.
 
 -> Make sure AXL user has been created on CUCM and has required privileges.
 
+
+## License
+
+This project is licensed to you under the terms of the [Cisco Sample Code License](https://github.com/chintangajjar013/cucm_Jabber2Line/blob/master/LICENSE)
